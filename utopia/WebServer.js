@@ -118,7 +118,6 @@ var WebServer = {
             request.url.indexOf('.ico') !== -1 ||
             request.url.indexOf('.gif') !== -1 ||
             request.url.indexOf('.jpeg') !== -1 ||
-            request.url.indexOf('.html') !== -1 ||
             request.url.indexOf('.png') !== -1) {
             return true;
         }
