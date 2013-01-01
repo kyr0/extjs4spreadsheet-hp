@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ext JS 4 - SpreadSheet - Introduction</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/prettify.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/default.css"/>
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/icon"/>
+
+    <style type="text/css">
+        .viewport {
+            height: 1400px !important;
+        }
+
+        .rightText {
+            height: 540px !important;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="viewport">
+
+    <!-- Navigation -->
+    <div class="topPan">
+
+        <div class="topMenuPan">
+            <ul>
+                <li><a class="active" href="/en/introduction">Introduction</a></li>
+                <li style="margin-left: 15px"><a href="/en/licensing">Licensing</a></li>
+                <li style="margin-left: -5px"><a href="/en/examples">Examples</a></li>
+                <li><a href="/en/downloads">Downloads</a></li>
+                <li style="margin-left: 20px"><a href="/en/documentation">Documenation</a></li>
+                <li style="margin-left: 30px"><a class="contact" href="/en/support">Get Support</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content body -->
+    <div class="bodyPan">
+
+        <!-- Left column -->
+        <div class="leftCol">
+            <div class="content"><h1>Ext JS 4 - SpreadSheet<br></h1>
+
+                <p>
+                    Ext JS 4 SpreadSheet is a highly customizable <strong>Microsoft Excel&reg;-like</strong> component
+                    for Ext JS 4.
+                </p>
+
+                <p>
+                    It is build on the standard Ext JS 4 grid component and supports Excel&reg;-like:
+                <ul>
+                    <li>&ndash; a calc <strong>selection model (mouse and keyboard)</strong></li>
+                    <li>&ndash; <strong>copying &amp; pasting</strong> from/into Microsoft Excel&reg;</li>
+                    <li>&ndash; <strong>cell editing</strong> and <strong>custom rendering</strong></li>
+                    <li>&ndash; <strong>granular control over editing and selecting</strong></li>
+                    <li>&ndash; <strong>and many more!</strong></li>
+                </ul>
+                </p>
+
+                <p>
+                    It works in any browser Ext JS 4 supports. It integrates with
+                    any plugin and grid feature bundled with Ext JS 4.
+                    <strong>It's implementation is fully evented and therefore customizable!</strong>
+                </p>
+
+                <p>
+                    While development I focused on <a href="/en/documentation"><strong>excellent code quality and
+                    documentation</strong></a> too.
+                </p>
+
+                <h2>Live Demo &ndash; Source Code</h2>
+
+                <p>
+                    Integrating the Ext JS 4 SpreadSheet is easy:
+
+
+                    <pre class="prettyprint"><code><span class="pln">
+
+</span><span class="kwd">new</span><span
+    class="pln"> </span><span
+    class="typ">Spread</span><span class="pun">.</span><span class="pln">grid</span><span
+    class="pun">.</span><span class="typ">Panel</span><span class="pun">({</span><span
+    class="pln">
+     title</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Users (generated sample data)'</span><span
+    class="pun">,</span><span class="pln">
+     store</span><span class="pun">:</span><span class="pln"> localDataStore</span><span
+    class="pun">,</span><span class="pln">
+     editable</span><span class="pun">:</span><span class="pln"> </span><span
+    class="kwd">true</span><span class="pun">,</span><span class="pln">
+     columns</span><span class="pun">:</span><span class="pln"> </span><span
+    class="pun">[{</span><span class="pun"></span><span class="pln">
+         xtype</span><span class="pun">:</span><span class="pln"> </span><span class="str">'spreadheadercolumn'</span><span
+class="pun">,</span><span class="pln">
+         header</span><span class="pun">:</span><span class="pln"> </span><span
+class="str">'ID'</span><span class="pln">
+     </span><span class="pun">}, {</span><span class="pun"></span><span class="pln">
+         header</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Last name&lt;br&gt;(editable)'</span><span
+class="pun">,</span><span class="pln">
+         renderer</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span
+class="pln"> </span><span class="pun">(</span><span class="pln">value</span><span
+class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+             </span><span class="kwd">return</span><span class="pln"> </span><span class="str">'&lt;i&gt;'</span><span
+class="pln"> </span><span class="pun">+</span><span class="pln"> value </span><span class="pun">+</span><span
+class="pln"> </span><span class="str">'&lt;/i&gt;'</span><span class="pun">;</span><span
+class="pln">
+         </span><span class="pun">},</span><span class="pln">
+         dataIndex</span><span class="pun">:</span><span class="pln"> </span><span class="str">'lastname'</span><span
+class="pun">,</span><span class="pln">
+         flex</span><span class="pun">:</span><span class="pln"> </span><span
+class="lit">1</span><span class="pln">
+     </span><span class="pun">}, {</span><span class="pun"></span><span class="pln">
+         allowedEditKeys</span><span class="pun">:</span><span class="pln"> </span><span
+class="str">'0123456789.'</span><span class="pun">,</span><span class="pln">
+         header</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Age&lt;br&gt;(editable)'</span><span
+class="pun">,</span><span class="pln">
+         dataIndex</span><span class="pun">:</span><span class="pln"> </span><span class="str">'age'</span><span
+class="pun">,</span><span class="pln">
+         xtype</span><span class="pun">:</span><span class="pln"> </span><span class="str">'numbercolumn'</span><span
+class="pln">
+     </span><span class="pun">}, {</span><span class="pun"></span><span class="pln">
+         header</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Birthday &lt;br&gt;(not editable)'</span><span
+class="pun">,</span><span class="pln">
+         dataIndex</span><span class="pun">:</span><span class="pln"> </span><span class="str">'birthday'</span><span
+class="pun">,</span><span class="pln">
+         xtype</span><span class="pun">:</span><span class="pln"> </span><span class="str">'datecolumn'</span><span
+class="pun">,</span><span class="pln">
+         editable</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span
+class="pln">
+     </span><span class="pun">}]</span><span class="pln">
+ </span><span class="pun">})</span><span class="pln">
+</span></code>
+                    </pre>
+                </p>
+            </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="rightCol">
+            <div class="rightBox">
+                <div class="rightBild">
+                    <img border="0" alt="Introduction" src="/images/motions/walking_water.jpg"
+                         class="motion"/>
+                </div>
+            </div>
+            <div class="rightBox2">
+                <div class="rightText">
+                    <h2>Try it now!</h2>
+
+                    <div style="position:absolute;right:30px;width:370px;height:500px;">
+                        <iframe src="/en/introduction_example.html" frameborder="0" width="100%" height="100%">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footerLeftCol">
+            &copy; <a target="_blank" href="http://www.aron-homberg.de">by <strong>Aron Homberg</strong></a> - Web
+            Developer, Author, Trainer, 2012 &ndash; 2013
+        </div>
+        <div class="footerRightCol">
+            <p>
+                * Excel&reg; is a registered trademark of the Microsoft Corporation.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Layout ending -->
+    <br clear="all"/>
+
+    <div class="footport"></div>
+</div>
+
+<!-- Loading indicator -->
+<div class="SiteLoadingMask" style="display: none"></div>
+<div class="SiteLoadingMaskIndicator" style="display: none"></div>
+
+</body>
+</html>
