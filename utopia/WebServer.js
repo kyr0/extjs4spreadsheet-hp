@@ -170,6 +170,7 @@ var WebServer = {
 
         // Redirect to /de/consulting
         if (request.url.indexOf('de') === -1 && request.url.indexOf('en') === -1 &&
+            request.url.indexOf('spread') === -1 && request.url.indexOf('docs') === -1 &&
             !this.looksLikeStaticFile(request)) {
 
             // Set redirect status code
